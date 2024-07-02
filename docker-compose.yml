@@ -1,0 +1,18 @@
+services:
+    home:
+        build:
+            context: .
+            dockerfile: ./frontend/home/Dockerfile
+        ports:
+            - "10000:10000"
+        volumes:
+            - ./frontend/home:/app
+        networks:
+            - network
+
+volumes:
+    data:
+        driver: local
+
+networks:
+    network:
